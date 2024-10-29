@@ -1,0 +1,100 @@
+/* Video styling */
+#background-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1; /* To place it behind other content */
+  object-fit: cover; /* To ensure the video covers the background */
+}
+
+/* Body and calculator styling */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.calculator {
+  background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1; /* Ensure it's above the video */
+  width: 100%;
+  max-width: 400px; /* Limiting width on larger screens */
+}
+
+#display {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 10px;
+  text-align: right;
+  font-size: 28px; /* Larger font size for better visibility */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 20px;
+  font-size: 20px; /* Larger font size */
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #e0e0e0;
+}
+
+button:active {
+  background-color: #ccc;
+}
+
+/* Media Queries for Smaller Devices */
+@media (max-width: 768px) {
+  .calculator {
+    max-width: 90%; /* Adjust the calculator width for smaller screens */
+  }
+
+  #display {
+    height: 50px;
+    font-size: 24px; /* Smaller display text on mobile */
+  }
+
+  button {
+    padding: 15px; /* Smaller buttons on mobile */
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .calculator {
+    max-width: 95%; /* Even narrower on very small screens */
+  }
+
+  #display {
+    height: 45px;
+    font-size: 20px; /* Adjusting the display font size */
+  }
+
+  button {
+    padding: 10px; /* Smaller buttons on very small screens */
+    font-size: 16px;
+  }
+}
